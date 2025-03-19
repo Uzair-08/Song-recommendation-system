@@ -1,0 +1,233 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Recommendation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Get Song Recommendations</h1>
+  <input type="text" id="song-name" placeholder="Enter song name">
+  <button id="recommend-btn">Get Recommendations</button>
+
+  <ul id="recommendations-list"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Beat Match</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero">
+    <div class="container">
+        <div class="search-bar-container">
+            <input
+                type="text"
+                id="song-search"
+                class="search-input"
+                placeholder="Search for a song..."
+            />
+            <button class="search-btn" onclick="handleSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="hero-content">
+            <h1>Discover Your Perfect Soundtrack</h1>
+            <p>
+                Personalized music recommendations based <br />
+                on your unique tastes.
+            </p>
+            <a href="#explore" class="cta-btn">Explore Now</a>
+        </div>
+
+        <div id="search-results" class="search-results hidden">
+            <h3>Search Results:</h3>
+            <ul id="results-list"></ul>
+        </div>
+    </div>
+</section>    
+
+    <section class="cardlayout">
+        <div class="container">
+            <div class="card">
+                <h1>Get Personalised music <br>
+                    Recommendations.</h1>
+                <div class="trybtn">
+                    <a href="#Try Now">Try Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Top-Artists">
+        <div class=" top container">
+            <div class="head">
+                <p>Global Top Artists</p>
+            </div>
+            <div class="main">
+                <h1>Top Artists being discovered <br> around the world right now.</h1>
+            </div>
+            <div class="foot">
+                <p>Get Personalised music
+                    Recommendations.</p>
+            </div>
+        </div>
+        <div class="grid-container container">
+            <div class="grid-item">
+                <img src="AR-Rahman-net-worth-birth-age-real-name-full-name-wife-children-oscars.jpg" alt="A.R. Rahman">
+                <div class="overlay">
+                    <p>A.R. Rahman</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="GettyImages_1264305927__1_.webp" alt="Artist Image 2">
+                <div class="overlay">
+                    <p>Lata Mangeshkar</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="dsp.jpg" alt="Artist Image 3">
+                <div class="overlay">
+                    <p>DSP</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="c4b87bfdcec717cfb1bf6633c23e1e2d.jpg" alt="Artist Image 4">
+                <div class="overlay">
+                    <p>Anirudh</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="image.webp" alt="Artist Image 5">
+                <div class="overlay">
+                    <p>SP.Bala Subramanyam</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="wp4248280.webp" alt="Artist Image 6">
+                <div class="overlay">
+                    <p>Shreya Ghoshal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="trending-songs">
+        <h2 class="section-title">Trending Songs</h2>
+        <div class="song-list">
+            <!-- Song 1 -->
+            <div class="song-card">
+                <div class="song-image">
+                    <img src="dsp.jpg" alt="Song 1">
+                    <div class="play-icon">&#9654;</div>
+                    <div class="trending-badge">Trending</div>
+                </div>
+                <div class="song-info">
+                    <p class="song-name">Song Title 1</p>
+                    <p class="artist-name">Artist 1</p>
+                </div>
+            </div>
+            <!-- Song 2 -->
+            <div class="song-card">
+                <div class="song-image">
+                    <img src="AR-Rahman-net-worth-birth-age-real-name-full-name-wife-children-oscars.jpg" alt="Song 2">
+                    <div class="play-icon">&#9654;</div>
+                    <div class="trending-badge">Trending</div>
+                </div>
+                <div class="song-info">
+                    <p class="song-name">Song Title 2</p>
+                    <p class="artist-name">Artist 2</p>
+                </div>
+            </div>
+            <!-- Song 3 -->
+            <div class="song-card">
+                <div class="song-image">
+                    <img src="c4b87bfdcec717cfb1bf6633c23e1e2d.jpg" alt="Song 3">
+                    <div class="play-icon">&#9654;</div>
+                    <div class="trending-badge">Trending</div>
+                </div>
+                <div class="song-info">
+                    <p class="song-name">Song Title 3</p>
+                    <p class="artist-name">Artist 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h3>Beat Match</h3>
+                    <p>Discover music, find your rhythm, and explore your perfect soundtracks.</p>
+                    <div class="social">
+                        <a href="#"><img src="instagram-line (1).png" alt=""></a>
+                        <a href="#"><img src="facebook-circle-fill.png" alt=""></a>
+                        <a href="#"><img src="twitter-fill.png" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recommendations">Recommendations</a></li>
+                        <li><a href="#genres">Genres</a></li>
+                        <li><a href="#explore">Explore</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="column">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@beatmatch.com</p>
+                    <p>Phone:+91 7207332005</p>
+                    <p>Location: Vasavi College of Engineering, Ibrahim Bagh, Hyderabad.</p>
+                </div>
+
+                <div class="column">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to get the latest news and music recommendations directly to your inbox.</p>
+                    <input class="email" type="email" placeholder="Enter your Email" required>
+                    <button class="Subscribe" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
